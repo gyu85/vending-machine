@@ -1,0 +1,252 @@
+@import './reset.css';
+
+/* 공통 - item */
+.box-item {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  background-size: 60px 60px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.box-item.cidar {
+  background-image: url('../images/cidar.png');
+}
+
+.box-item.juiceOrange {
+  background-image: url('../images/juice-orange.png');
+}
+
+.box-item.coke {
+  background-image: url('../images/cola.png');
+}
+
+.box-item.pepsi {
+  background-image: url('../images/pepsi.png');
+}
+
+.box-item.mountainDew {
+  background-image: url('../images/mountaindew.png');
+}
+
+.box-item.demisodaApple {
+  background-image: url('../images/demisoda-apple.png');
+}
+
+.box-item.demisodaOrange {
+  background-image: url('../images/demisoda-orange.png');
+}
+
+.box-item.fantaOrange {
+  background-image: url('../images/fanta-orange.png');
+}
+
+.box-item.birak {
+  background-image: url('../images/sichye.png');
+}
+
+/* vending machine layout */
+.vending-content {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0;
+}
+
+.section-vending {
+  display: flex;
+  justify-content: center;
+  width: 800px;
+}
+
+.section-product {
+  padding: 16px;
+  border: 1px solid #70737c29;
+  border-radius: 8px;
+}
+
+.section-coin {
+  padding-left: 16px;
+}
+
+/* 자판기 UI */
+/* items */
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.products > li {
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.products .item-name {
+  display: block;
+  padding-top: 8px;
+}
+
+.products .info-item {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+  margin: 0;
+}
+
+.products .info-item > dd {
+  margin-left: 8px;
+}
+
+.products .group-info {
+  display: flex;
+}
+
+.products .purchase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 32px;
+  padding: 4px 8px;
+  margin: 0 auto;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  background-color: #00bf40;
+}
+
+.products .purchase:disabled {
+  color: #989ba2;
+  background-color: #f4f4f5;
+  cursor: default;
+}
+
+/* 자판기 - 금액 */
+.df-coin {
+  margin: 0;
+}
+
+.df-coin > dt {
+  font-size: 24px;
+}
+
+.df-coin > dd {
+  padding-top: 4px;
+  margin: 0;
+  font-size: 18px;
+}
+
+.changes {
+  display: flex;
+  margin-top: 8px;
+  align-items: center;
+  height: 32px;
+  padding: 0 8px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #989ba2;
+}
+
+/* 내정보 */
+.section-myinfo {
+  width: 30%;
+}
+
+/* 내가 가진 금액 */
+.tit-mymoney {
+  font-size: 20px;
+}
+
+.area-insert .tf-insert {
+  height: 46px;
+  padding: 8px 16px;
+  border: 1px solid #989ba2;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.area-insert .box-btns {
+  display: flex;
+  padding-top: 8px;
+}
+
+.area-insert .box-btns > button {
+  height: 32px;
+  padding: 0 8px;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.area-insert .insert {
+  margin-right: 8px;
+  background-color: #00bf40;
+}
+
+.area-insert .cancel {
+  background-color: #ff4242;
+}
+
+/* my-money */
+.area-money {
+  margin-top: 16px;
+  border-top: 1px solid #70737c38;
+}
+
+.area-money .list-money {
+  margin: 16px 0 0;
+  padding: 8px;
+  border: 1px solid #70737c29;
+  border-radius: 4px;
+}
+
+.area-money .list-money dd {
+  margin-left: 4px;
+}
+
+.area-money .group-money {
+  display: flex;
+  padding-top: 8px;
+}
+
+/* 구입한 아이템 */
+.section-purchased {
+  padding-top: 16px;
+}
+
+.section-purchased .tit-purchased {
+  font-size: 20px;
+}
+
+.section-purchased .purchased {
+  overflow: auto;
+  max-height: 320px;
+  padding: 8px;
+  margin-top: 8px;
+  border: 1px solid #70737c29;
+  border-radius: 4px;
+}
+
+.section-purchased .purchased > li {
+  display: flex;
+}
+
+.section-purchased .purchased > li + li {
+  padding: 8px 0;
+  margin-top: 4px;
+  border-top: 1px solid #70737c29;
+}
+
+.purchased .box-item {
+  margin: 0;
+}
+
+.section-purchased .list-detail {
+  display: flex;
+  margin: 0;
+}
+
+.section-purchased .list-detail > dd {
+  margin-left: 4px;
+}
