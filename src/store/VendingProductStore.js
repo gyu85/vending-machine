@@ -24,6 +24,14 @@ export const updateProductList = productId => {
   vendingProductStore.notify();
 };
 
+export const renderProductList = () => {
+  const currentProductList = structuredClone(getProductList());
+
+  vendingProductStore.setData(currentProductList);
+  setPartItem('vendingMachine', 'productItem', currentProductList);
+  vendingProductStore.notify();
+};
+
 export const subscribeProducts = fn => {
   vendingProductStore.subscribe(fn);
 };

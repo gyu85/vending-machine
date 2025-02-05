@@ -5,6 +5,8 @@ import {
 
 import { updateVendingCoin } from '../../store/VendingCoinStore.js';
 
+import { renderProductList } from '../../store/VendingProductStore.js';
+
 export default class InsertCoin {
   constructor() {
     subscribeUserCoin(this.drawInsert.bind(this));
@@ -14,6 +16,7 @@ export default class InsertCoin {
     insert(insertedCoin) {
       updateUserCoin('insert', insertedCoin);
       updateVendingCoin('insert', insertedCoin);
+      renderProductList();
     },
     cancel(tfEl) {
       tfEl.value = '';

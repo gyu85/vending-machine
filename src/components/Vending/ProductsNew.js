@@ -4,14 +4,11 @@ import {
   updateProductList
 } from '../../store/VendingProductStore.js';
 
-import {
-  updateVendingCoin,
-  getVendingCoin
-} from '../../store/VendingCoinStore.js';
+import { updateVendingCoin } from '../../store/VendingCoinStore.js';
 
 import { updatePurchasedList } from '../../store/UserPurchasedItem.js';
 
-export default class Products {
+export default class ProductsNew {
   constructor() {
     this.productData = getProductList();
 
@@ -49,7 +46,6 @@ export default class Products {
     const targetElement = document.querySelector('.products');
 
     this.productData = getProductList();
-    this.currentCoin = getVendingCoin();
 
     if (targetElement) {
       targetElement.remove();
@@ -62,8 +58,6 @@ export default class Products {
 
   render() {
     if (!this.productData || !this.productData.length) return;
-
-    console.log(this.currentCoin);
 
     return (
       this.productData.reduce((html, item) => {
@@ -81,7 +75,7 @@ export default class Products {
             type="button"
             data-product="${id}"
             class="purchase" ${!available ? 'disabled' : ''}
-            ${quantity === 0 || price > this.currentCoin ? 'disabled' : ''}
+            ${quantity === 0 ? 'disabled' : ''}
           >
             ${price}원 구입
           </button>
