@@ -1,7 +1,7 @@
 import {
   getProductList,
   subscribeProducts,
-  updateProductList
+  renderProductList
 } from '../../store/VendingProductStore.js';
 
 import {
@@ -14,6 +14,7 @@ import { updatePurchasedList } from '../../store/UserPurchasedItem.js';
 export default class Products {
   constructor() {
     this.productData = getProductList();
+    this.currentCoin = getVendingCoin();
 
     subscribeProducts(this.drawProducts.bind(this));
   }
@@ -31,8 +32,6 @@ export default class Products {
         item => item.id === dataset.product
       );
 
-      updateProductList(purchasedItem.id);
-
       updateVendingCoin('purchase', purchasedItem.price);
 
       updatePurchasedList({
@@ -41,6 +40,8 @@ export default class Products {
         quantity: 1,
         price: purchasedItem.price
       });
+
+      renderProductList();
     });
   }
 
@@ -62,8 +63,6 @@ export default class Products {
 
   render() {
     if (!this.productData || !this.productData.length) return;
-
-    console.log(this.currentCoin);
 
     return (
       this.productData.reduce((html, item) => {

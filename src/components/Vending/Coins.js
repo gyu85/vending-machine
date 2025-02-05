@@ -6,6 +6,8 @@ import {
 
 import { updateUserCoin } from '../../store/UserCoinStore.js';
 
+import { renderProductList } from '../../store/VendingProductStore.js';
+
 export default class Coins {
   constructor() {
     this.coin = getVendingCoin();
@@ -32,6 +34,7 @@ export default class Coins {
     changesElement.addEventListener('click', () => {
       updateUserCoin('return', this.coin);
       updateVendingCoin('return');
+      renderProductList();
     });
   }
 
